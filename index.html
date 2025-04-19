@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transparent Image BG Changer</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #ffffff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #image-container {
+      width: 300px;
+      height: 300px;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      transition: background-color 0.3s;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    input[type="color"] {
+      padding: 5px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="image-container">
+    <img src="useit.png" alt="Transparent Image">
+  </div>
+
+  <input type="color" id="colorPicker" value="#ffffff">
+
+  <script>
+    const picker = document.getElementById('colorPicker');
+    const container = document.getElementById('image-container');
+
+    picker.addEventListener('input', () => {
+      container.style.backgroundColor = picker.value;
+    });
+  </script>
+
+</body>
+</html>
